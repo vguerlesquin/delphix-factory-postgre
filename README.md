@@ -56,4 +56,4 @@ docker.image('ventury/delphix-factory').inside("-u root -e DELPHIX_IP=${config.D
 ```
 
 ## To Do
-- get Delphix shell scripts from a public repository 
+- get Delphix shell scripts from a public repository
