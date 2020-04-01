@@ -1,0 +1,47 @@
+
+#
+# Download jq JSON Command Line parser (singe executable) ...
+# 
+https://github.com/stedolan/jq/releases/
+
+# Latest ...
+curl -s -L https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 --output jq
+chmod +x jq
+./jq --version
+sudo cp jq /usr/bin/.
+
+# Delphix version ...
+curl -s -L https://github.com/stedolan/jq/releases/download/jq-1.4/jq-linux-x86_64 --output jq
+chmod +x jq
+./jq --version
+sudo cp jq /usr/bin/.
+
+
+
+
+##############################################################################
+#
+# For Your Reference: How to use Delphix jq platform distribution ...
+#
+[delphix@linuxsource ~]$ find /var/opt/delphix/toolkit/ -name "jq" -print 2>/dev/null
+/var/opt/delphix/toolkit/Delphix_COMMON_564dc178_9aed_1570_65be_119aee7c518b_delphix_host/scripts/jq
+/var/opt/delphix/toolkit/Delphix_COMMON_564dc178_9aed_1570_65be_119aee7c518b_delphix_host/scripts/jq/hpux_ia64/bin/jq
+/var/opt/delphix/toolkit/Delphix_COMMON_564dc178_9aed_1570_65be_119aee7c518b_delphix_host/scripts/jq/hpux_ia64/bin64/jq
+/var/opt/delphix/toolkit/Delphix_COMMON_564dc178_9aed_1570_65be_119aee7c518b_delphix_host/scripts/jq/sunos_x86/bin/jq
+/var/opt/delphix/toolkit/Delphix_COMMON_564dc178_9aed_1570_65be_119aee7c518b_delphix_host/scripts/jq/sunos_x86/bin64/jq
+/var/opt/delphix/toolkit/Delphix_COMMON_564dc178_9aed_1570_65be_119aee7c518b_delphix_host/scripts/jq/sunos_sparc/bin/jq
+/var/opt/delphix/toolkit/Delphix_COMMON_564dc178_9aed_1570_65be_119aee7c518b_delphix_host/scripts/jq/sunos_sparc/bin64/jq
+/var/opt/delphix/toolkit/Delphix_COMMON_564dc178_9aed_1570_65be_119aee7c518b_delphix_host/scripts/jq/aix_powerpc/bin/jq
+/var/opt/delphix/toolkit/Delphix_COMMON_564dc178_9aed_1570_65be_119aee7c518b_delphix_host/scripts/jq/aix_powerpc/bin64/jq
+/var/opt/delphix/toolkit/Delphix_COMMON_564dc178_9aed_1570_65be_119aee7c518b_delphix_host/scripts/jq/linux_x86/bin/jq
+/var/opt/delphix/toolkit/Delphix_COMMON_564dc178_9aed_1570_65be_119aee7c518b_delphix_host/scripts/jq/linux_x86/bin64/jq
+
+#
+# Find jq executable in Delphix Host Toolkit Path platform and architecure ...
+#
+JQ=`find /var/opt/delphix/toolkit/ -name "jq" -print 2>/dev/null | grep "linux" | grep -m1 "bin64"`  
+$JQ --version
+
+
+*** End of File ***
+
