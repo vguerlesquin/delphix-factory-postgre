@@ -1,5 +1,5 @@
 # delphix-factory-postgre
-A docker container to manage PostgreSQL Database on a Delphix Engine
+A docker container to manage PostgreSQL Database on a Delphix Engine.
 
 ## Purpose
 In this container you have everything to create a PostgreSQL Virtual Database using a Delphix Engine.
@@ -56,4 +56,4 @@ docker.image('ventury/delphix-factory').inside("-u root -e DELPHIX_IP=${config.D
 ```
 
 ## To Do
-- get Delphix shell scripts from a public repository 
+- get Delphix shell scripts from a public repository
