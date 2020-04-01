@@ -30,9 +30,9 @@
 # Command Line Usage:
 #   ./provision_postgres131.sh [source_db] [vdb_name] [vdb_group] [target_host] [repository] [vdb_mount_path] [vdb_port]
 #  Examples
-#   ./provision_postgres131.sh pgSource pgVDB NBC awsCentos "Postgres vFiles (10.12)" /mnt/provision/pgVDB 5434
-#   ./provision_postgres131.sh pgSource pgVDB1 NBC awsCentos "Postgres vFiles (10.12)" /mnt/provision/pgVDB1 5435
-#   ./provision_postgres131.sh pgVDB pgVDB2 NBC awsCentos "Postgres vFiles (10.12)" /mnt/provision/pgVDB2 5436
+#   ./provision_postgres131.sh pgSource pgVDB group awsCentos "Postgres vFiles (10.12)" /mnt/provision/pgVDB 5434
+#   ./provision_postgres131.sh pgSource pgVDB1 group awsCentos "Postgres vFiles (10.12)" /mnt/provision/pgVDB1 5435
+#   ./provision_postgres131.sh pgVDB pgVDB2 group awsCentos "Postgres vFiles (10.12)" /mnt/provision/pgVDB2 5436
 #
 # Note: The current paramaters for the provisioned VDB are coded in the JSON string variable line later in this script ...
 #       The "configSettingsStg" is a array of objects that have the propertyName and value respective data.
@@ -61,7 +61,7 @@ fi
 #DEF_SOURCE_DB="pgSource"                   	 	# Source DB
 #DEF_VDB_NAME="pgVDB"					# VDB Name
 #DEF_VDB_MOUNT_PATH="/mnt/delphix/pgvdb"     		# VDB Mount Path
-#DEF_VDB_GROUP="NBC"					# VDB Delphix Group
+#DEF_VDB_GROUP="group"					# VDB Delphix Group
 #DEF_VDB_ENV="awsCentos"				# VDB Host Env
 #DEF_VDB_REPOSITORY="Postgres vFiles (10.12)"		# VDB Host Env Repository Name
 #DEF_VDB_PORT=5434					# VDB Port
