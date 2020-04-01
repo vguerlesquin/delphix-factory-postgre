@@ -14,13 +14,13 @@ This container embed Alan Bitterman scripts to manipulate Delphix Engine.
 The purpose of this docker container is to be used into a build pipeline (e.g. in Jenkins) but it can also be run on its own.
 When starting the container, you should provide `DELPHIX_IP`, `DELPHIX_USERNAME` and `DELPHIX_PASSWORD` as environment variables for the container.
 
-Avaiblable commands are :
+Avaiblable commands are:
 - `provision_postgres131.sh` : Delphix API for Provisioning a Postgres DB (Specific for PostgreSQL)
 - `vdb_init.sh` : Delphix API calls to change the state of VDB's (generic)
 - `vdb_operations.sh` : API calls to perform basic operations on a VDB (generic)
 Description of these commands are available in README_APIS.txt file and specific scripts comments as provided by Alan Bitterman. All these command are in the PATH.
 
-Here is an example of using the container into a Jenkinsfile :
+Here is an example of using the container into a Jenkinsfile:
 
 ```
 ...
