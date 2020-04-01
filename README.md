@@ -3,6 +3,7 @@ A docker container to manage PostgreSQL Database on a Delphix Engine
 
 ## Purpose
 In this container you have everything to create a PostgreSQL Virtual Database using a Delphix Engine.
+This container embed Alan Bitterman scripts to manipulate Delphix Engine.
 
 ### Prerequisite
 - Delphix Engine up and running
