@@ -1,11 +1,11 @@
 #!/bin/bash
-# 
+#
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
-# 
+#
 #     http://www.apache.org/licenses/LICENSE-2.0
-# 
+#
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -15,20 +15,20 @@
 # Copyright (c) 2020 by Delphix. All rights reserved.
 #
 # Program Name : provision_postgres131.sh
-# Description  : Delphix API for Provisioning a Postgres DB  
+# Description  : Delphix API for Provisioning a Postgres DB
 # Author       : Alan Bitterman
 # Created      : 2020-03-10
 # Version      : v1.1
 #
 # Requirements :
-#  1.) curl and jq command line libraries 
+#  1.) curl and jq command line libraries
 #  2.) Populate Delphix Engine Connection Information . ./delphix_engine.conf
 #
-# Interactive Usage: 
+# Interactive Usage:
 #   ./provision_postgres131.sh
 #
 # Command Line Usage:
-#   ./provision_postgres131.sh [source_db] [vdb_name] [vdb_group] [target_host] [repository] [vdb_mount_path] [vdb_port] 
+#   ./provision_postgres131.sh [source_db] [vdb_name] [vdb_group] [target_host] [repository] [vdb_mount_path] [vdb_port]
 #  Examples
 #   ./provision_postgres131.sh pgSource pgVDB NBC awsCentos "Postgres vFiles (10.12)" /mnt/provision/pgVDB 5434
 #   ./provision_postgres131.sh pgSource pgVDB1 NBC awsCentos "Postgres vFiles (10.12)" /mnt/provision/pgVDB1 5435
@@ -39,7 +39,7 @@
 #       Please add/change as needed.
 #
 #   ,\"parameters\": {\"postgresPort\":${VDB_PORT},\"configSettingsStg\":[{\"propertyName\":\"listen_addresses\",\"value\":\"*\"}]}
-# 
+#
 #########################################################
 #                   DELPHIX CORP                        #
 # Please make changes to the parameters below as req'd! #
@@ -50,7 +50,7 @@
 
 if [[ "${API_PATH}" == "" ]]
 then
-   API_PATH="."
+   API_PATH="/usr/bin"
 fi
 
 . ${API_PATH}/delphix_engine.conf
@@ -298,7 +298,7 @@ if [[ "${VDB_PORT}" == "" ]]
 then
    if [[ "${DEF_VDB_PORT}" == "" ]]
    then
-      echo "Example: 8434"    
+      echo "Example: 8434"
       echo "---------------------------------"
       echo "Please Enter ${ZTMP}: "
       read VDB_PORT
@@ -353,7 +353,7 @@ json="{
   }
 }"
 
-echo "JSON: $json" 
+echo "JSON: $json"
 
 echo " "
 echo "Provision AppData ... "

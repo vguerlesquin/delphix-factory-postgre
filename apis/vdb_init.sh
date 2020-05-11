@@ -27,18 +27,18 @@
 #
 # Initeractive Usage: ./vdb_init.sh
 #
-# Non-Interactive Usage: ./vdb_init.sh [start | stop | enable | disable | status | delete] [VDB_Name] 
+# Non-Interactive Usage: ./vdb_init.sh [start | stop | enable | disable | status | delete] [VDB_Name]
 #
-# Delphix Doc's Reference: 
+# Delphix Doc's Reference:
 #    https://docs.delphix.com/docs/reference/web-service-api-guide/api-cookbook-common-tasks-workflows-and-examples/api-cookbook-stop-start-a-vdb
 #
 #########################################################
 #                     DELPHIX CORP                      #
 #########################################################
 
-if [[ "${API_PATH}" == "" ]] 
+if [[ "${API_PATH}" == "" ]]
 then
-   API_PATH="."
+   API_PATH="/usr/bin"
 fi
 
 . ${API_PATH}/delphix_engine.conf
@@ -85,7 +85,7 @@ fi
 # $1 = start | stop | disable | enable | status | delete
 
 ACTION=$1
-if [[ "${ACTION}" == "" ]] 
+if [[ "${ACTION}" == "" ]]
 then
    echo "Usage: ./vdb_init.sh [start | stop | enable | disable | status | delete] [VDB_Name] "
    echo "---------------------------------"
@@ -175,7 +175,7 @@ esac
 if [ "${ACTION}" == "status" ]
 then
 
-   # 
+   #
    # Get Source Status ...
    #
    STATUS=`curl -s -X GET -k "${BaseURL}/source" -b "${COOKIE}" -H "${CONTENT_TYPE}"`
@@ -208,14 +208,14 @@ then
 else
 
 
-   # 
+   #
    # delete ...
    #
    if [ "${ACTION}" == "delete" ]
    then
 
       if [[ "${CONTAINER_TYPE}" == "OracleDatabaseContainer" ]]
-      then 
+      then
          deleteParameters="OracleDeleteParameters"
       else
          deleteParameters="DeleteParameters"
@@ -235,7 +235,7 @@ EOF
 
    else
 
-      # 
+      #
       # All other init options; start | stop | enable | disable ...
       #
 
@@ -273,4 +273,3 @@ fi     # end if $status
 echo "Done ..."
 echo " "
 exit 0;
-
