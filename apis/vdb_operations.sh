@@ -26,14 +26,14 @@
 #  3.) Include ./jqJSON_subroutines.sh
 #
 # Interactive Usage: ./vdb_operations.sh
-#
+# 
 # Non-Interactive Usage: ./vdb_operations [sync | refresh | rollback] [VDB_Name]
 #
 # Delphix Docs Reference:
 #   https://docs.delphix.com/docs/reference/web-service-api-guide
 #
 #########################################################
-#                      DELPHIX CORP                     #
+#                      DELPHIX CORP                     # 
 #########################################################
 
 #########################################################
@@ -41,7 +41,7 @@
 
 if [[ "${API_PATH}" == "" ]]
 then
-   API_PATH="/usr/bin"
+   API_PATH="."
 fi
 
 . ${API_PATH}/delphix_engine.conf
@@ -74,7 +74,7 @@ echo "Session and Login Successful ..."
 ## Command Line Arguments ...
 
 ACTION=$1
-if [[ "${ACTION}" == "" ]]
+if [[ "${ACTION}" == "" ]] 
 then
    echo "Usage: ./vdb_operations [sync | refresh | rollback] [VDB_Name]"
    echo "---------------------------------"
@@ -148,10 +148,10 @@ echo "provision source container: ${PARENT_SOURCE}"
 ## type values ...
 
 #database update *> set type=
-#ASEDBContainer
-#AppDataContainer
-#MSSqlDatabaseContainer
-#MySQLDatabaseContainer
+#ASEDBContainer           
+#AppDataContainer         
+#MSSqlDatabaseContainer   
+#MySQLDatabaseContainer   
 #OracleDatabaseContainer
 #PgSQLDatabaseContainer
 
@@ -195,7 +195,7 @@ elif [[ "${CONTAINER_TYPE}" == "ASEDBContainer" ]]
 then
    # ASELatestBackupSyncParameters
    # ASENewBackupSyncParameters
-   # ASESpecificBackupSyncParameters
+   # ASESpecificBackupSyncParameters 
    SYNC_TYPE="ASELatestBackupSyncParameters"
    REFRESH_TYPE="RefreshParameters"
    ROLLBACK_TYPE="RollbackParameters"
@@ -209,7 +209,7 @@ else
 fi
 
 #########################################################
-## Perform Action ...
+## Perform Action ... 
 
 case ${ACTION} in
 sync)
@@ -273,3 +273,4 @@ jqJobStatus "${JOB}"            # Job Status Function ...
 echo "Done ..."
 echo " "
 exit 0;
+

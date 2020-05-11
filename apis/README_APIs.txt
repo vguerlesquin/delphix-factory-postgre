@@ -1,9 +1,9 @@
 
-Filename                   | Description
+Filename                   | Description 
 ---------------------------+-------------------------------------------------------------------
 delphix_engine.conf        | Delphix Connection Parameters <-- CHANGE for your Delphix Engine
 jqJSON_subroutines.sh      | Subroutines (typicall no need to change)
-
+                           
 provision_postgres131.sh   | Provision a VDB using the Delphix PostgresDB 1.3.1 plugin version
                            | ... edit provision_postgres131.sh hard coded parameters ...
 
@@ -11,7 +11,7 @@ vdb_operations.sh          | VDB Operations; sync (snapshot), rollback (rewind) 
 vdb_init.sh                | VDB States; start,stop,enable,disable,status,delete
 
 
-#############################################################################
+############################################################################# 
 
 #
 # Set API Path for include files ...
@@ -28,12 +28,12 @@ API_PATH=`pwd`
 # SOURCE_DB="pgSource"                            # Source DB
 # VDB_NAME="pgVDB"                                # VDB Name
 # VDB_MOUNT_PATH="/mnt/delphix/pgvdb"             # VDB Mount Path
-# VDB_GROUP="GROUPNAME"                                 # VDB Delphix Group
+# VDB_GROUP="NBC"                                 # VDB Delphix Group
 # VDB_ENV="awsCentos"                             # VDB Host Env
 # VDB_REPOSITORY="Postgres vFiles (10.12)"        # VDB Host Env Repository Name
 #
 
-./provision_postgres131.sh
+./provision_postgres131.sh  
 
 
 #
@@ -66,3 +66,4 @@ API_PATH=`pwd`
 
 
 *** End of File ***
+
