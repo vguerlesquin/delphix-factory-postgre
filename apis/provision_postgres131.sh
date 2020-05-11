@@ -1,11 +1,11 @@
 #!/bin/bash
-#
+# 
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
-#
+# 
 #     http://www.apache.org/licenses/LICENSE-2.0
-#
+# 
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -15,31 +15,31 @@
 # Copyright (c) 2020 by Delphix. All rights reserved.
 #
 # Program Name : provision_postgres131.sh
-# Description  : Delphix API for Provisioning a Postgres DB
+# Description  : Delphix API for Provisioning a Postgres DB  
 # Author       : Alan Bitterman
 # Created      : 2020-03-10
 # Version      : v1.1
 #
 # Requirements :
-#  1.) curl and jq command line libraries
+#  1.) curl and jq command line libraries 
 #  2.) Populate Delphix Engine Connection Information . ./delphix_engine.conf
 #
-# Interactive Usage:
+# Interactive Usage: 
 #   ./provision_postgres131.sh
 #
 # Command Line Usage:
-#   ./provision_postgres131.sh [source_db] [vdb_name] [vdb_group] [target_host] [repository] [vdb_mount_path] [vdb_port]
+#   ./provision_postgres131.sh [source_db] [vdb_name] [vdb_group] [target_host] [repository] [vdb_mount_path] [vdb_port] 
 #  Examples
-#   ./provision_postgres131.sh pgSource pgVDB group awsCentos "Postgres vFiles (10.12)" /mnt/provision/pgVDB 5434
-#   ./provision_postgres131.sh pgSource pgVDB1 group awsCentos "Postgres vFiles (10.12)" /mnt/provision/pgVDB1 5435
-#   ./provision_postgres131.sh pgVDB pgVDB2 group awsCentos "Postgres vFiles (10.12)" /mnt/provision/pgVDB2 5436
+#   ./provision_postgres131.sh pgSource pgVDB NBC awsCentos "Postgres vFiles (10.12)" /mnt/provision/pgVDB 5434
+#   ./provision_postgres131.sh pgSource pgVDB1 NBC awsCentos "Postgres vFiles (10.12)" /mnt/provision/pgVDB1 5435
+#   ./provision_postgres131.sh pgVDB pgVDB2 NBC awsCentos "Postgres vFiles (10.12)" /mnt/provision/pgVDB2 5436
 #
 # Note: The current paramaters for the provisioned VDB are coded in the JSON string variable line later in this script ...
 #       The "configSettingsStg" is a array of objects that have the propertyName and value respective data.
 #       Please add/change as needed.
 #
 #   ,\"parameters\": {\"postgresPort\":${VDB_PORT},\"configSettingsStg\":[{\"propertyName\":\"listen_addresses\",\"value\":\"*\"}]}
-#
+# 
 #########################################################
 #                   DELPHIX CORP                        #
 # Please make changes to the parameters below as req'd! #
@@ -50,7 +50,7 @@
 
 if [[ "${API_PATH}" == "" ]]
 then
-   API_PATH="/usr/bin"
+   API_PATH="."
 fi
 
 . ${API_PATH}/delphix_engine.conf
@@ -61,7 +61,7 @@ fi
 #DEF_SOURCE_DB="pgSource"                   	 	# Source DB
 #DEF_VDB_NAME="pgVDB"					# VDB Name
 #DEF_VDB_MOUNT_PATH="/mnt/delphix/pgvdb"     		# VDB Mount Path
-#DEF_VDB_GROUP="group"					# VDB Delphix Group
+#DEF_VDB_GROUP="NBC"					# VDB Delphix Group
 #DEF_VDB_ENV="awsCentos"				# VDB Host Env
 #DEF_VDB_REPOSITORY="Postgres vFiles (10.12)"		# VDB Host Env Repository Name
 #DEF_VDB_PORT=5434					# VDB Port
@@ -298,7 +298,7 @@ if [[ "${VDB_PORT}" == "" ]]
 then
    if [[ "${DEF_VDB_PORT}" == "" ]]
    then
-      echo "Example: 8434"
+      echo "Example: 8434"    
       echo "---------------------------------"
       echo "Please Enter ${ZTMP}: "
       read VDB_PORT
@@ -353,7 +353,7 @@ json="{
   }
 }"
 
-echo "JSON: $json"
+echo "JSON: $json" 
 
 echo " "
 echo "Provision AppData ... "
